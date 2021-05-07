@@ -6,11 +6,9 @@ class Solution:
     
     for i in range(len(s)):
       for j in s[i:]:
-        try:
-          if characters[j]: break
-        except:
-          characters.update({j: 1})
-          length = length + 1
+        if characters.get(j): break
+        characters.update({j: 1})
+        length = length + 1
 
       if length > maxLength:
         maxLength = length
